@@ -1,25 +1,67 @@
-public class Doctor {
-    static int id=0; //auutoincrement
-    String name;
-    String speciality;
-    String  email;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Doctor extends User {
+    //arivutos
+    private String speciality;
+
     //comportamientos
-    Doctor(){
-        System.out.println("construyendo el objeto Doctor ");
 
-    }
 
-    Doctor(String name, String speciality){
+    Doctor(String name, String email){
+        super(name, email);
         System.out.println("nombre de doctor es:"+name);
-        id++;
-        this.name=name;
         this.speciality=speciality;
     }
-    public void showName(){
-        System.out.println(name);
+
+    public String getSpeciality() {
+        return speciality;
     }
 
-    public void showId(){
-        System.out.println("el id es :"+id);
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    ArrayList<AvailableAppointment>availableAppointments=new ArrayList<>();
+    public void availableAppointment(Date date, String time){
+        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
+    }
+    public ArrayList<AvailableAppointment>getAvailableAppointments(){
+        return availableAppointments;
+    }
+
+    public static class AvailableAppointment{
+        private int td_availableAppointment;
+        private Date date;
+        private String time;
+
+        public AvailableAppointment(Date date, String time) {
+            this.date = date;
+            this.time = time;
+        }
+
+        public int getTd_availableAppointment() {
+            return td_availableAppointment;
+        }
+
+        public void setTd_availableAppointment(int td_availableAppointment) {
+            this.td_availableAppointment = td_availableAppointment;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public void setDate(Date date) {
+            this.date = date;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
     }
 }
