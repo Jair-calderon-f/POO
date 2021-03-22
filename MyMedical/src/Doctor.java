@@ -2,14 +2,18 @@ public class Doctor {
     static int id=0; //auutoincrement
     String name;
     String speciality;
+    String  email;
     //comportamientos
     Doctor(){
         System.out.println("construyendo el objeto Doctor ");
-        id++;
+
     }
 
-    Doctor(String name){
+    Doctor(String name, String speciality){
         System.out.println("nombre de doctor es:"+name);
+        id++;
+        this.name=name;
+        this.speciality=speciality;
     }
     public void showName(){
         System.out.println(name);

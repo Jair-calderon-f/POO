@@ -1,20 +1,17 @@
 import javax.print.Doc;
 import java.util.Scanner;
-//import static ui.UIMenu.*;
+
 public class Main {
     public static void main(String[] args) {
-        Doctor MyDoctor= new Doctor();
-        MyDoctor.name="jair Calderon";
-        MyDoctor.showName();
-        MyDoctor.showId();
-        System.out.println(Doctor.id);
+       //UIMenu.showMenu();
+        Doctor myDoctor= new Doctor("jair Calderon","enfermero");
+        System.out.println(myDoctor.name);
+        System.out.println(myDoctor.speciality);
 
-        Doctor.id++;
+        Patient p= new Patient("ROSA","rosa@gmail.com");
+        p.setWeight(56.6);
+        System.out.println(p.getWeight());
 
-        Doctor myDoctorAnn= new Doctor();
-        myDoctorAnn.showId();
-        System.out.println(Doctor.id);
-
-      //showMenu();
+        p.setPhoneNumber("12345678");
     }
 }
