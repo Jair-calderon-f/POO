@@ -52,4 +52,10 @@ public class Patient extends User{
                 ", blood='" + blood + '\'' +
                 '}';
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("paciente ");
+        System.out.println("historial completo  desde nacimiento ");
+    }
 }

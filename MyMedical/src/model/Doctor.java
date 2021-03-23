@@ -40,6 +40,13 @@ public class Doctor extends User {
                 '}';
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println(" empleado de hospital: crus roja");
+        System.out.println("departamento: cancerolgogia");
+
+    }
+
     public static class AvailableAppointment{
         private int td_availableAppointment;
         private Date date;
