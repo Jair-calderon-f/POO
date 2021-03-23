@@ -21,6 +21,7 @@ public class UIDoctorMenu {
             response = Integer.valueOf(sc.nextLine());
             switch (response){
                 case 1:
+                    showAddAvailableAppointmentsMenu();
                     break;
                 case 2:
                     break;
@@ -46,7 +47,7 @@ public class UIDoctorMenu {
 
             if(response>0 && response<13){
                 int monthSelected=response;
-                System.out.println(monthSelected+". "+UIMenu.MONTHS[monthSelected]);
+                System.out.println(monthSelected+". "+UIMenu.MONTHS[monthSelected-1]);
                 System.out.println("insert to date  available :[dd/mm/yyyy] ");
                 String date=sc.nextLine();
 
@@ -63,12 +64,16 @@ public class UIDoctorMenu {
                     responseTime=Integer.valueOf(sc.nextLine());
                 }while (responseTime==2);
                 UIMenu.doctorLogged.availableAppointment(date,time);
+                checkDoctorAvailableAppoinments(UIMenu.doctorLogged);
             }else if (response ==0){
                 showDoctorMenu();
             }
         }while (response !=0);
     }
-    private static void checkDoctorAvailableAppoinments(){
-        if(doctor.getcx)
+    private static void checkDoctorAvailableAppoinments(Doctor doctor ){
+
+        if(doctor.getAvailableAppointments().size()>0 && !doctorsAvailablesAppointsments.contains((doctor))){
+            doctorsAvailablesAppointsments.add(doctor);
+        }
     }
 }
