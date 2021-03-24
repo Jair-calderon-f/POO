@@ -4,10 +4,15 @@ import java.util.Date;
 
 public class AppointmentDoctor implements ISchedulable{
     private int id;
-    private String patient;
-    private String doctor;
+    private Patient patient;
+    private Doctor doctor;
     private Date date;
     private String  time;
+
+    public AppointmentDoctor(Patient patient, Doctor doctor) {
+        this.patient = patient;
+        this.doctor = doctor;
+    }
 
     public int getId() {
         return id;
@@ -17,19 +22,19 @@ public class AppointmentDoctor implements ISchedulable{
         this.id = id;
     }
 
-    public String getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(String patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
-    public String getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 
@@ -42,7 +47,7 @@ public class AppointmentDoctor implements ISchedulable{
     }
 
     public String getTime() {
-        return time;
+        return time+"hrs";
     }
 
     public void setTime(String time) {
@@ -51,6 +56,7 @@ public class AppointmentDoctor implements ISchedulable{
 
     @Override
     public void schedule(Date date, String time) {
-
+        this.date=date;
+        this.time=time;
     }
 }

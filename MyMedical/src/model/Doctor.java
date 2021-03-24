@@ -8,7 +8,7 @@ import java.util.Date;
 public class Doctor extends User {
     //arivutos
     private String speciality;
-
+    private ArrayList<AvailableAppointment>availableAppointments=new ArrayList<>();
     //comportamientos
 
 
@@ -26,7 +26,7 @@ public class Doctor extends User {
         this.speciality = speciality;
     }
 
-    ArrayList<AvailableAppointment>availableAppointments=new ArrayList<>();
+
     public void availableAppointment(String  date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
@@ -46,7 +46,6 @@ public class Doctor extends User {
     public void showDataUser() {
         System.out.println(" empleado de hospital: crus roja");
         System.out.println("departamento: cancerolgogia");
-
     }
 
     public static class AvailableAppointment{
@@ -72,11 +71,11 @@ public class Doctor extends User {
             this.td_availableAppointment = td_availableAppointment;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
-        public String getDate(String date) {
+        public String getDate() {
             return format.format(date);
         }
         public void setDate(Date date) {

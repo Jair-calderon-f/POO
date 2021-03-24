@@ -100,6 +100,7 @@ public class UIMenu {
                         //obtener datos del paciente
                         patientLogged=p;
                         //show pathien menu
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }

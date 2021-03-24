@@ -3,9 +3,11 @@ import model.*;
 import java.util.Date;
 
 public class Main {
+
     public static void main(String[] args) {
-       ui.UIMenu.showMenu();
-       /*
+
+        ui.UIMenu.showMenu();
+        /*
         Doctor myDoctor= new Doctor("jair Calderon","jair@gamil.com");
        // System.out.println(myDoctor.name);
         //System.out.println(myDoctor.speciality);
@@ -44,10 +46,11 @@ public class Main {
         }
 
 
-        
+
         Patient p= new Patient("ROSA","rosa@gmail.com");
         System.out.println(p);
 
          */
     }
+
 }
